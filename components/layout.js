@@ -3,9 +3,11 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import Header from '../components/header'
+
 
 const name = 'Aslan';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = `evadzala's Note`;
 
 export default function Layout({ children, home }) {
   return (
@@ -25,7 +27,8 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <Header className={styles.header} />
+      {/* <header className={styles.header}>
         {home ? (
           <>
             <Image
@@ -57,7 +60,7 @@ export default function Layout({ children, home }) {
             </h2>
           </>
         )}
-      </header>
+      </header> */}
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>

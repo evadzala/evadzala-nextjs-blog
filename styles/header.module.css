@@ -1,0 +1,111 @@
+/* 導覽列容器 */
+.headerNav {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between; /* 關鍵：左右分開 */
+  align-items: center;
+  height: 100%;
+}
+
+/* Title 樣式 */
+.headerLogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* 電腦版按鈕清單 */
+.headerLinks {
+  display: flex;
+  gap: 8px;
+}
+
+.headerBtn {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.headerBtn:hover {
+  background-color: #f0f7ff;
+  color: #007bff;
+}
+
+/* 漢堡按鈕樣式 (預設隱藏) */
+.headerHamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* --- 響應式設計 (手機版) --- */
+@media (max-width: 768px) {
+  .headerHamburger {
+    display: block; /* 手機版顯示漢堡 */
+  }
+
+  .headerLinks {
+    display: none; /* 隱藏原本的橫向選單 */
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .headerLinks.is-active {
+    display: flex; /* 點擊後開啟選單 */
+  }
+
+  .headerBtn {
+    width: 100%;
+    text-align: left;
+    padding: 15px 30px;
+    border-radius: 0;
+  }
+
+  /* 漢堡轉 X 的動畫 */
+  .headerHamburger.is-open .hamburgerLine:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+  .headerHamburger.is-open .hamburgerLine:nth-child(2) {
+    opacity: 0;
+  }
+  .headerHamburger.is-open .hamburgerLine:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+}
