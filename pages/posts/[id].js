@@ -3,6 +3,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
+import 'highlight.js/styles/github.css';
 
 export default function Post({ postData }) {
     return (
@@ -15,7 +16,10 @@ export default function Post({ postData }) {
           <div className={utilStyles.lightText}>
             <Date dateString={postData.date} />
           </div>
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <div 
+            className="post-content"
+            dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
+          />
         </article>
       </Layout>
     );

@@ -33,3 +33,43 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* 針對 Markdown 轉換後的文章內容區塊 */
+.post-content pre {
+  background-color: #1e1e1e; /* 深色背景，類 VS Code */
+  border-radius: 8px;        /* 圓角 */
+  padding: 1.25rem;          /* 內邊距 */
+  margin: 1.5rem 0;          /* 與上下文字的間距 */
+  overflow-x: auto;          /* 程式碼太長時顯示水平捲軸 */
+  border: 1px solid #333;    /* 邊框，增加層次感 */
+  line-height: 1.5;          /* 行高，增加閱讀性 */
+  position: relative;
+}
+
+.post-content code {
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* 針對行內程式碼 (Inline Code)，如 `text` */
+.post-content :not(pre) > code {
+  background-color: #f3f4f6;
+  color: #eb5757;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.post-content pre::before {
+  content: "CODE"; /* 預設文字 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #444;
+  color: #fff;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  border-radius: 0 8px 0 8px;
+  opacity: 0.6;
+}
