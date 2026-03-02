@@ -3,7 +3,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
-import 'highlight.js/styles/github.css';
+import 'highlight.js/styles/github-dark.css';
 
 export default function Post({ postData }) {
     return (
