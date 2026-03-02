@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import styles from '../styles/header.module.css'; // 引入外部 CSS
 import { siteTitle } from './layout';
+import Link from 'next/link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = ['Home', 'Category', 'Archives', 'Tags', 'About'];
+  const navItems = [
+    {title: 'Blog', slug: ''},
+    {title: 'About', slug: 'about'},
+  ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,9 +25,9 @@ const Header = () => {
         {/* 右側按鈕 - 電腦版 */}
         <div className={`${styles.headerLinks} ${isOpen ? 'is-active' : ''}`}>
           {navItems.map((item) => (
-            <button key={item} className={styles.headerBtn}>
-              {item}
-            </button>
+            <Link key={item} className={styles.headerBtn} href={`/${item.slug}`}>
+              {item.title}
+            </Link>
           ))}
         </div>
 

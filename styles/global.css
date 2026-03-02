@@ -44,6 +44,7 @@ img {
   border: 1px solid #333;    /* 邊框，增加層次感 */
   line-height: 1.5;          /* 行高，增加閱讀性 */
   position: relative;
+  z-index: 1;
 }
 
 .post-content code {
