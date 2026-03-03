@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from '../styles/header.module.css'; // 引入外部 CSS
 import { siteTitle } from './layout';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +30,18 @@ const Header = () => {
               {item.title}
             </Link>
           ))}
+          <a
+            href="https://github.com/evadzala/evadzala-nextjs-blog" 
+            target="_blank"
+            className={styles.headerLinks}
+          >
+            <Image 
+              src="/images/github.svg"
+              alt="GitHub Icon" 
+              width={20} 
+              height={20} 
+            />
+          </a>
         </div>
 
         {/* 手機版漢堡按鈕 */}
