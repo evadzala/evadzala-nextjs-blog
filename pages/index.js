@@ -20,7 +20,7 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 3;
+  const postsPerPage = 10;
 
   // 1. 監聽 URL Query 參數
   // 當使用者直接輸入網址或點擊瀏覽器回退鍵時，同步頁碼狀態
