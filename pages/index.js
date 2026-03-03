@@ -53,7 +53,6 @@ export default function Home({ allPostsData }) {
   };
 
   // 計算分頁顯示的文章範圍
-  const totalPages = Math.ceil(allPostsData.length / postsPerPage);
   const currentPosts = allPostsData.slice(
     (currentPage - 1) * postsPerPage,
     currentPage * postsPerPage
@@ -79,9 +78,10 @@ export default function Home({ allPostsData }) {
 
         {/* 分頁器組件 */}
         <Pagination 
-          total={totalPages} 
+          total={allPostsData.length} 
+          perPage={postsPerPage}
           CurrentPage={currentPage} 
-          onPageChange={handlePageChange} 
+          onPageChange={handlePageChange}
         />
       </section>
     </Layout>
