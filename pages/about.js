@@ -6,6 +6,7 @@ export default function About() {
   return (
     <Layout home>
         <section className={utilStyles.headingMd}>
+            <h2 className={utilStyles.headingLg}>About</h2>
             <header className={utilStyles.headingHeader}>
                 <div>
                     <Image
