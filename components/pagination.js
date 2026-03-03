@@ -46,13 +46,13 @@ export default function Pagination({
     return (
         <nav className={styles.paginationContainer}>
             {/* 上一頁按鈕 */}
-            <button
+            {/* <button
                 className={styles.navBtn}
                 disabled={currentPage === 1}
                 onClick={() => onPageChange(currentPage - 1)}
             >
                 &lt;
-            </button>
+            </button> */}
 
             {/* 頁碼數字 */}
             <div className={styles.pageList}>
@@ -71,13 +71,13 @@ export default function Pagination({
             </div>
 
             {/* 下一頁按鈕 */}
-            <button
+            {/* <button
                 className={styles.navBtn}
                 disabled={currentPage === totalPages}
                 onClick={() => onPageChange(currentPage + 1)}
             >
                 &gt;
-            </button>
+            </button> */}
         </nav>
     );
 }
