@@ -88,7 +88,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
-  .headerLinks.is-active {
+  .headerLinks.isActive {
     display: flex; /* 點擊後開啟選單 */
   }
 
@@ -100,13 +100,13 @@
   }
 
   /* 漢堡轉 X 的動畫 */
-  .headerHamburger.is-open .hamburgerLine:nth-child(1) {
+  .headerHamburger.isOpen .hamburgerLine:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 5px);
   }
-  .headerHamburger.is-open .hamburgerLine:nth-child(2) {
+  .headerHamburger.isOpen .hamburgerLine:nth-child(2) {
     opacity: 0;
   }
-  .headerHamburger.is-open .hamburgerLine:nth-child(3) {
+  .headerHamburger.isOpen .hamburgerLine:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -5px);
   }
 }

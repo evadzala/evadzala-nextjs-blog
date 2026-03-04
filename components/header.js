@@ -12,6 +12,7 @@ const Header = () => {
   ];
 
   const toggleMenu = () => {
+    console.log('toggleMenu', isOpen)
     setIsOpen(!isOpen);
   };
 
@@ -24,16 +25,16 @@ const Header = () => {
         </div>
 
         {/* 右側按鈕 - 電腦版 */}
-        <div className={`${styles.headerLinks} ${isOpen ? 'is-active' : ''}`}>
+        <div className={`${styles.headerLinks} ${isOpen ? styles.isActive : ''}`}>
           {navItems.map((item) => (
-            <Link key={item} className={styles.headerBtn} href={`/${item.slug}`}>
+            <Link key={item.title} className={styles.headerBtn} href={`/${item.slug}`}>
               {item.title}
             </Link>
           ))}
           <a
-            href="https://github.com/evadzala/evadzala-nextjs-blog" 
+            href="https://github.com/evadzala/evadzala-nextjs-blog"
             target="_blank"
-            className={styles.headerLinks}
+            className={styles.headerBtn}
           >
             <Image 
               src="/images/github.svg"
@@ -46,7 +47,7 @@ const Header = () => {
 
         {/* 手機版漢堡按鈕 */}
         <button 
-          className={`${styles.headerHamburger} ${isOpen ? 'is-open' : ''}`} 
+          className={`${styles.headerHamburger} ${isOpen ? styles.isOpen : ''}`} 
           onClick={toggleMenu}
           aria-label="Menu"
         >
